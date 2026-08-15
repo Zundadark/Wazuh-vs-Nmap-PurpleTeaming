@@ -38,7 +38,9 @@ sudo nmap -A 192.168.3.46
 * **Со стороны Kali Linux:** Сканер успешно вернул список открытых портов хоста Windows.
 * **Со стороны Wazuh Dashboard:** На графиках `Security Events` зафиксировано **0 событий**. Полная слепота.
 
-!
+
+<img width="988" height="668" alt="wazuh_report" src="https://github.com/user-attachments/assets/459ba4d5-ccd1-44d7-b7bb-1144e950eb4d" />
+
 
 ### Технический вывод:
 Стандартный агент Wazuh для Windows ориентирован на мониторинг классических системных журналов (Application, System, Security). Он физически не перехватывает трафик на сетевом уровне, если входящие соединения не приводят к критическим ошибкам служб или созданию деструктивных процессов. Проводя пассивную или активную разведку, хакер остается полностью невидимым.
@@ -76,6 +78,10 @@ auditpol /set /category:"{69979849-797A-11D9-BED3-505054503030}" /success:enable
 
 ### Результат в Wazuh Dashboard:
 Общий счетчик событий зафиксировал мощный всплеск (**900+ событий**). Система успешно вывела на главный экран критический алерт **Authentication failure** и зафиксировала изменение политик безопасности (`policy_changed`).
+
+
+<img width="941" height="663" alt="wazuh_report2" src="https://github.com/user-attachments/assets/c6d5b4ed-6020-41d6-b13a-ede32cfdd6f6" />
+
 
 ---
 
@@ -142,6 +148,9 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 }
 ```
 *Анализ JSON-лога четко показал, что скрипт Nmap пытался удаленно проверить и скомпрометировать учетную запись `guest` через легитимный системный процесс `net.exe`.*
+
+<img width="948" height="889" alt="Снимок экрана 2026-08-16 050817" src="https://github.com/user-attachments/assets/bc1e2250-0458-4fbf-b767-70acf732db1f" />
+
 
 ---
 
