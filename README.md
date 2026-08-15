@@ -141,6 +141,8 @@ sshd[9692]: Failed password for root from 192.168.3.50 port 46280 ssh2
 
 В ходе Раунда №3 была запущена сетевая атака брутфорса Nmap на Ubuntu Server. Ручной анализ логов (`/var/log/auth.log`) показал, что атака полностью успешна: операционная система зафиксировала сотни ошибок входа (`Failed password for root`) с IP-адреса Kali Linux.
 
+<img width="934" height="747" alt="image" src="https://github.com/user-attachments/assets/075fdd2e-388f-4bdc-a253-3321d98bd5f6" />
+
 **Почему Wazuh Dashboard показал 0 алертов:**
 Эксперимент доказал важное правило архитектуры Wazuh: **Wazuh-manager "из коробки" не собирает логи собственной локальной машины.** Он выполняет роль сервера и ждет данных от внешних агентов. Чтобы Wazuh увидел атаку Nmap на саму Ubuntu, на нее необходимо либо установить Wazuh-agent, либо вручную прописать путь к `/var/log/auth.log` в конфигурационном файле менеджера.
 
