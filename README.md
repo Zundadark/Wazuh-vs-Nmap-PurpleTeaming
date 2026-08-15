@@ -140,6 +140,8 @@ sshd[9692]: Failed password for root from 192.168.3.50 port 46280 ssh2
 ### 🎯 Окончательный вердикт нападения Nmap на Ubuntu Server(Wazuh)
 
 В ходе Раунда №3 была запущена сетевая атака брутфорса Nmap на Ubuntu Server. Ручной анализ логов (`/var/log/auth.log`) показал, что атака полностью успешна: операционная система зафиксировала сотни ошибок входа (`Failed password for root`) с IP-адреса Kali Linux.
+
+
 <img width="738" height="667" alt="image" src="https://github.com/user-attachments/assets/c2c9479f-3fbb-4ac8-bce8-45106a5b9561" />
 
 ---
