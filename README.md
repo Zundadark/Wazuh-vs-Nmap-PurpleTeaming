@@ -47,8 +47,9 @@ sudo nmap --script vuln 192.168.3.46
 wevtutil cl Security
 ```
 *   **Реакция Wazuh:** Критические триггеры (Level 12+) не сработали.
-
+![](wazuh_report.png)
 ---
+
 
 ## 🧠 Вывод
 
