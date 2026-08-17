@@ -139,7 +139,6 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 
 ```json
 {
-  "manager.name": "wazuh-server",
   "agent.ip": "192.168.3.46",
   "agent.name": "DESKTOP-9U24PQJ",
   "data.win.eventdata.image": "C:\\Windows\\SysWOW64\\net1.exe",
