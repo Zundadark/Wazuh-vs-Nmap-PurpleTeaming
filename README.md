@@ -131,20 +131,6 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 ```
 *После применения фикса служба была перезапущена: `Restart-Service -Name "Wazuh"`.*
 
----
-
-## 🏆 6. Конец Лабораторной Работы и Структура Пойманного Инцидента
-
-Перевод на `eventchannel` мгновенно пробил засор в передаче данных. Wazuh Dashboard вывалил лавину сырых логов. Из недр SIEM во вкладке *Events* был успешно извлечен и проанализирован JSON-паспорт артефактов атаки Nmap (Событие создания процесса Sysmon Event ID 1):
-
-```json
-{
-  "agent.ip": "192.168.3.46",
-  "agent.name": "DESKTOP-9U24PQJ",
-  "data.win.eventdata.image": "C:\\Windows\\SysWOW64\\net1.exe",
-  "data.win.eventdata.parentCommandLine": "net user guest",
-  "data.win.eventdata.hashes": "MD5=97EF4BCB1ED2FEEB51672B7FAEB1872..., SHA256=8BAAD631C2..."
-}
 ```
 
 ---
