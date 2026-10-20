@@ -173,7 +173,7 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 ```xml
   <rule id="100002" level="7">
     <if_sid>61600</if_sid>
-    <field name="win.system.eventID">^3\$</field>
+    <field name="win.system.eventID"></field>
     <description>Sysmon - Event 3: Network Connection Detected (Custom Alert)</description>
     <options>no_full_log</options>
   </rule>
