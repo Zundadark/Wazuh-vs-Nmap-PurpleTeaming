@@ -131,9 +131,9 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 ```
 *После применения фикса служба была перезапущена: `Restart-Service -Name "Wazuh"`.*
 
-```
 
 ---
+
 
 ## 📈 Итоговые Выводы
 
@@ -149,7 +149,7 @@ sudo nmap -sV --script default,discovery,vuln -p 445 192.168.3.46
 В конец группы было добавлено кастомное правило, перехватывающее сетевые события Sysmon (Event ID 3) и принудительно поднимающее их уровень важности до уровня 7, пробивая стандартные фильтры Dashboard:
 
 ```xml
-  <rule id="100002" level="7">
+  <rule id="100002" level="12">
     <if_sid>61600</if_sid>
     <field name="win.system.eventID"></field>
     <description>Sysmon - Event 3: Network Connection Detected (Custom Alert)</description>
